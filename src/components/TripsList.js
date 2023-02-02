@@ -4,6 +4,9 @@ import { colors, shadow, sizes, spacing } from "../constants/theme";
 import { FavoriteButton } from "../components/shared/FavoriteButton";
 import { useNavigation } from "@react-navigation/native";
 import { SharedElement } from "react-navigation-shared-element";
+import { Card } from "./shared/Card/Card";
+import { CardMedia } from "./shared/Card/CardMedia";
+import { CardContent } from "./shared/Card/CardContent";
 
 const CARD_WIDTH = sizes.width / 2 - (spacing.l + spacing.l / 2);
 const CARD_HEIGHT = 220;
@@ -14,28 +17,24 @@ export const TripsList = ({ list }) => {
     <View style={styles.container}>
       {list.map((item, index) => {
         return (
-          <TouchableOpacity
-            style={styles.cardContainer}
+          <Card
             key={item.id}
+            style={styles.card}
             onPress={() => {
               navigation.navigate("TripDetails", { trip: item });
             }}
           >
-            <View style={[styles.card, shadow.light]}>
-              <SharedElement id={`trip.${item.id}.image`}>
-                <View style={styles.imageBox}>
-                  <Image style={styles.image} source={item.image} />
-                </View>
-              </SharedElement>
-              <View style={styles.footer}>
-                <View style={styles.titleBox}>
-                  <Text style={styles.title}>{item.title}</Text>
-                  <Text style={styles.location}>{item.location}</Text>
-                </View>
-                <FavoriteButton />
+            <SharedElement id={`trip.${item.id}.image`} style={styles.media}>
+              <CardMedia source={item.image} />
+            </SharedElement>
+            <CardContent style={styles.content}>
+              <View style={styles.titleBox}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.location}>{item.location}</Text>
               </View>
-            </View>
-          </TouchableOpacity>
+              <FavoriteButton />
+            </CardContent>
+          </Card>
         );
       })}
     </View>
@@ -54,8 +53,14 @@ const styles = StyleSheet.create({
   card: {
     width: CARD_WIDTH,
     height: CARD_HEIGHT,
-    backgroundColor: colors.white,
-    borderRadius: sizes.radius,
+    marginLeft: spacing.l,
+    marginBottom: spacing.l,
+  },
+  media: {
+    flex: 1,
+  },
+  content: {
+    paddingRight: spacing.m / 2,
   },
   imageBox: {
     width: CARD_WIDTH,

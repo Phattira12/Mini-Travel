@@ -2,7 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { colors, shadow, sizes } from "../../../constants/theme";
 
-const Card = ({ children, style, onPress, shadowType = "light" }) => {
+export const Card = ({ children, style, onPress, shadowType = "light" }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -13,7 +13,7 @@ const Card = ({ children, style, onPress, shadowType = "light" }) => {
   );
 };
 
-export default Card;
+
 
 const styles = StyleSheet.create({
   card: {

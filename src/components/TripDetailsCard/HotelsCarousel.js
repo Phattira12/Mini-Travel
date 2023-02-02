@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import Card from "../shared/Card/Card";
+import { Card } from "../shared/Card/Card";
 import { CardContent } from "../shared/Card/CardContent";
 import { CardMedia } from "../shared/Card/CardMedia";
 import { Carousel } from "../shared/Carousel";
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   card: {
     height: CARD_HEIGHT,
   },
-  container: {
+  content: {
     height: 88,
   },
   titleBox: {

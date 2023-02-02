@@ -1,12 +1,10 @@
 import React, { useMemo } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { colors, sizes, spacing } from "../../constants/theme";
-import { Icon } from "../shared/Icon";
 import * as Animatable from "react-native-animatable";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import { CustomHandler } from "./CustomHandler";
 import { CustomBackground } from "./CustomBackground";
-import { SectionHeader } from "../shared/SectionHeader";
 import Animated, {
   Extrapolation,
   interpolate,
@@ -14,7 +12,9 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from "react-native-reanimated";
+import { Icon } from "../shared/Icon";
 import { Divider } from "../shared/Divider";
+import { SectionHeader } from "../shared/SectionHeader";
 import { RatingOverall } from "../shared/Rating/RatingOverall";
 import { HotelsCarousel } from "./HotelsCarousel";
 import { Reviews } from "../Reviews/Reviews";
@@ -53,7 +53,7 @@ export const TripDetailsCard = ({ trip }) => {
     ),
   }));
 
-  const locationIconStyle = useAnimatedStyle(() => ({
+  const locationIonStyle = useAnimatedStyle(() => ({
     transform: [
       {
         scale: interpolate(
@@ -107,7 +107,7 @@ export const TripDetailsCard = ({ trip }) => {
           <Animated.Text style={[styles.locationText, locationStyle]}>
             {trip.location}
           </Animated.Text>
-          <Animated.View style={locationIconStyle}>
+          <Animated.View style={locationIonStyle}>
             <Icon icon="Location" size={20} style={styles.locationIcon} />
           </Animated.View>
         </View>
@@ -116,7 +116,8 @@ export const TripDetailsCard = ({ trip }) => {
       <BottomSheetScrollView
         style={styles.scrollBox}
         showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}> 
+        showsHorizontalScrollIndicator={false}
+      >
         <Animated.View style={contentStyle}>
           <RatingOverall rating={trip.rating} containerStyle={styles.rating} />
           <SectionHeader
@@ -142,12 +143,13 @@ export const TripDetailsCard = ({ trip }) => {
             onPress={() => {}}
             buttonTitle="See All"
           />
-          <Reviews reviews={trip.reviews} /> 
+          <Reviews reviews={trip.reviews} />
         </Animated.View>
       </BottomSheetScrollView>
     </BottomSheet>
   );
 };
+
 const styles = StyleSheet.create({
   header: {
     paddingVertical: spacing.l,
