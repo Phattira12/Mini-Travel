@@ -2,7 +2,13 @@ import { View, Text, Button, StyleSheet } from "react-native";
 import React from "react";
 import { sizes, spacing } from "../../constants/theme";
 
-export const SectionHeader = ({ title,containerStyle, titleStyle, onPress, buttonTitle = "Button" }) => {
+export const SectionHeader = ({
+  title,
+  containerStyle,
+  titleStyle,
+  onPress,
+  buttonTitle = "Button",
+}) => {
   return (
     <View style={[styles.container, containerStyle]}>
       <Text style={[styles.title, titleStyle]}>{title}</Text>

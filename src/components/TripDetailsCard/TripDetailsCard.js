@@ -16,6 +16,8 @@ import Animated, {
 } from "react-native-reanimated";
 import { Divider } from "../shared/Divider";
 import { RatingOverall } from "../shared/Rating/RatingOverall";
+import { HotelsCarousel } from "./HotelsCarousel";
+import { Reviews } from "../Reviews/Reviews";
 
 const AnimatedDivider = Animated.createAnimatedComponent(Divider);
 
@@ -57,7 +59,7 @@ export const TripDetailsCard = ({ trip }) => {
         scale: interpolate(
           animatedIndex.value,
           [0, 0.08],
-          [0, 0.1],
+          [0, 1],
           Extrapolation.CLAMP
         ),
       },
@@ -112,19 +114,35 @@ export const TripDetailsCard = ({ trip }) => {
       </Animatable.View>
       <AnimatedDivider style={contentStyle} />
       <BottomSheetScrollView
+        style={styles.scrollBox}
         showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-      >
-        <RatingOverall rating={trip.rating} containerStyle={styles.rating} /> 
+        showsHorizontalScrollIndicator={false}> 
         <Animated.View style={contentStyle}>
+          <RatingOverall rating={trip.rating} containerStyle={styles.rating} />
           <SectionHeader
-            title="Summery"
+            title="Summary"
             containerStyle={styles.sectionHeader}
             titleStyle={styles.sectionTitle}
           />
-          <View style={styles.summery}>
-            <Text style={styles.summeryText} >{trip.description}</Text>
+          <View style={styles.summary}>
+            <Text style={styles.summaryText}>{trip.description}</Text>
           </View>
+          <SectionHeader
+            title="Hotels"
+            containerStyle={styles.sectionHeader}
+            titleStyle={styles.sectionTitle}
+            onPress={() => {}}
+            buttonTitle="See All"
+          />
+          <HotelsCarousel hotels={trip.hotels} />
+          <SectionHeader
+            title="Reviews"
+            containerStyle={styles.sectionHeader}
+            titleStyle={styles.sectionTitle}
+            onPress={() => {}}
+            buttonTitle="See All"
+          />
+          <Reviews reviews={trip.reviews} /> 
         </Animated.View>
       </BottomSheetScrollView>
     </BottomSheet>
@@ -151,6 +169,10 @@ const styles = StyleSheet.create({
   locationIcon: {
     tintColor: colors.gray,
   },
+  scrollBox: {
+    marginTop: spacing.s,
+    marginBottom: spacing.m,
+  },
   sectionHeader: {
     marginTop: spacing.m,
   },
@@ -158,13 +180,13 @@ const styles = StyleSheet.create({
     color: colors.lightGray,
     fontWeight: "normal",
   },
-  summery:{
+  summary: {
     marginHorizontal: spacing.l,
   },
-  summeryText: {
+  summaryText: {
     color: colors.primary,
   },
-  rating:{
+  rating: {
     marginHorizontal: spacing.l,
-  }
+  },
 });

@@ -1,23 +1,24 @@
-import { View } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import React from "react";
-import { colors, shadow } from "../../constants/theme";
+import { colors, shadow, sizes } from "../../constants/theme";
 import { Icon } from "./Icon";
 
-export const FavoriteButton = ({ active, style }) => {
+export const FavoriteButton = ({ active, style, onPress }) => {
   return (
-    <View
+    <TouchableOpacity style={style} onPress={onPress}>
+      <View
       style={[
         {
           backgroundColor: colors.white,
           padding: 4,
-          borderRadius: 20,
+          borderRadius: sizes.radius,
         },
         shadow.light,
-        style,
       ]}
     >
       <Icon icon={active ? 'FavoriteFilled':"Favorite"} size={24} />
     </View>
+    </TouchableOpacity>
   );
 };
 

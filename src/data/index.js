@@ -167,7 +167,7 @@ export const TOP_PLACES = [
     location: 'Spain',
     description:
       'Granada is the capital city of the province of Granada, in the autonomous community of Andalusia, Spain',
-    rating: 8.9,
+    rating: 9,
     gallery: [],
     reviews: [REVIEWS[1], REVIEWS[2]],
     hotels: [HOTELS[11], HOTELS[12]],
