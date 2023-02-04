@@ -5,7 +5,6 @@ import { Icon } from "../shared/Icon";
 import { sizes, spacing } from '../../constants/theme';
 
 
-
 export const MainHeader = ({title}) => {
    const insets = useSafeAreaInsets();
   return (

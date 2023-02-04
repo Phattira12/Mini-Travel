@@ -1,8 +1,8 @@
 import { View, Image, StyleSheet, Animated } from "react-native";
 import React, { useRef } from "react";
-import { sizes } from "../constants/theme";
+import { sizes } from "../../constants/theme";
 import { SharedElement } from "react-navigation-shared-element";
-import { Carousellndicator } from "../components/shared/Carousellndicator";
+import { Carousellndicator } from "../shared/Carousellndicator";
 import * as Animatable from "react-native-animatable";
 
 export const TripDetailsCarousel = ({ slides, id }) => {

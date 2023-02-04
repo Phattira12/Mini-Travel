@@ -1,12 +1,12 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import { colors, shadow, sizes, spacing } from "../constants/theme";
-import { FavoriteButton } from "../components/shared/FavoriteButton";
+import { colors, sizes, spacing } from "../../constants/theme";
+import { FavoriteButton } from "../../components/shared/FavoriteButton";
 import { useNavigation } from "@react-navigation/native";
 import { SharedElement } from "react-navigation-shared-element";
-import { Card } from "./shared/Card/Card";
-import { CardMedia } from "./shared/Card/CardMedia";
-import { CardContent } from "./shared/Card/CardContent";
+import { Card } from "../shared/Card/Card";
+import { CardMedia } from "../shared/Card/CardMedia";
+import { CardContent } from "../shared/Card/CardContent";
 
 const CARD_WIDTH = sizes.width / 2 - (spacing.l + spacing.l / 2);
 const CARD_HEIGHT = 220;
@@ -25,7 +25,7 @@ export const TripsList = ({ list }) => {
             }}
           >
             <SharedElement id={`trip.${item.id}.image`} style={styles.media}>
-              <CardMedia source={item.image} />
+              <CardMedia source={item.image}  />
             </SharedElement>
             <CardContent style={styles.content}>
               <View style={styles.titleBox}>

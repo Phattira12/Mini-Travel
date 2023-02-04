@@ -1,34 +1,35 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
-import { colors, sizes, spacing } from "../constants/theme";
+import { colors, sizes, spacing, shadow } from "../constants/theme";
 import { Icon } from "../components/shared/Icon";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { TripDetailsCard } from "../components/TripDetailsCard/TripDetailsCard";
+import { TripDetailsCard } from "../components/TripDetails/TripDetailsCard/TripDetailsCard";
 import * as Animatable from "react-native-animatable";
-import { TripDetailsCarousel } from "../components/TripDetailsCarousel";
+import { TripDetailsCarousel } from "../components/TripDetails/TripDetailsCarousel";
 import { FavoriteButton } from "../components/shared/FavoriteButton";
 
 export const TripDetailsScreen = ({ navigation, route }) => {
-  const insets = useSafeAreaInsets();
+  // const insets = useSafeAreaInsets();
   const { trip } = route.params;
   const slides = [trip.image, ...trip.gallery];
   return (
     <View style={styles.container}>
       <Animatable.View
-        style={[styles.backButton, { marginTop: insets.top }]}
+        style={[styles.backButton, { marginTop: 10 }]}
         animation="fadeIn"
         delay={500}
         duration={400}
         easing="ease-in-out"
       >
         <Icon
-          icon="ArrowLeft"
+          icon="Back"
           style={styles.backIcon}
+          size={32}
           onPress={navigation.goBack}
         />
       </Animatable.View>
       <Animatable.View
-        style={[styles.favoriteButton, { marginTop: insets.top }]}
+        style={[styles.favoriteButton, { marginTop: 10 }]}
         animation="fadeIn"
         delay={500}
         duration={400}
@@ -54,6 +55,7 @@ TripDetailsScreen.sharedElements = (route) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "space-between",
   },
   imageBox: {
     // borderRadius: sizes.radius,
@@ -75,6 +77,9 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   backIcon: {
-    tintColor: colors.white,
+    backgroundColor: colors.white,
+    padding: 4,
+    borderRadius: sizes.radius,
+    ...shadow.light,
   },
 });

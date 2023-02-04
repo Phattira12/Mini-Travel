@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, Animated } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { SearchScreen } from "../screens/SearchScreen";
 import { FavoriteScreen } from "../screens/FavoriteScreen";
 import { Icon } from "../components/shared/Icon";
 import { colors, sizes } from "../constants/theme";
 import { HomeNavigator } from "./HomeNavigator";
+import { SearchNavigator } from "./SearchNavigator";
 
 const tabs = [
   {
@@ -14,7 +14,7 @@ const tabs = [
   },
   {
     name: "Search",
-    screen: SearchScreen,
+    screen: SearchNavigator,
   },
   {
     name: "Favorite",

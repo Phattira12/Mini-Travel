@@ -3,8 +3,8 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { MainHeader } from "../components/shared/MainHeader";
 import { ScreenHeader } from "../components/shared/ScreenHeader";
 import { SectionHeader } from "../components/shared/SectionHeader";
-import { TopPlacesCarousel } from "../components/TopPlacesCarousel";
-import { TripsList } from "../components/TripsList";
+import { TopPlacesCarousel } from "../components/Home/TopPlacesCarousel";
+import { TripsList } from "../components/Home/TripsList";
 import { colors } from "../constants/theme";
 import { PLACES, TOP_PLACES } from "../data";
 
@@ -28,6 +28,6 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
   },
 });

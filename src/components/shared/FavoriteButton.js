@@ -16,7 +16,7 @@ export const FavoriteButton = ({ active, style, onPress }) => {
         shadow.light,
       ]}
     >
-      <Icon icon={active ? 'FavoriteFilled':"Favorite"} size={24} />
+      <Icon icon={active ? 'FavoriteFilled':"Favorite"} size={25} />
     </View>
     </TouchableOpacity>
   );

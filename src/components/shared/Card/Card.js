@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   card: {
     width: 200,
     height: 200,
-    backgroundColor: colors.white,
+    backgroundColor: colors.lightcyan,
     borderRadius: sizes.radius,
   },
   inner: {

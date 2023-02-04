@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import { colors, sizes } from "../constants/theme";
-import { Carousel } from "./shared/Carousel";
-import { Card } from "./shared/Card/Card";
-import { CardMedia } from "./shared/Card/CardMedia";
-import { CardFavoriteIcon } from "./shared/Card/CardFavoriteIcon";
+import { colors, sizes } from "../../constants/theme";
+import { Carousel } from "../shared/Carousel";
+import { Card } from "../shared/Card/Card";
+import { CardMedia } from "../shared/Card/CardMedia";
+import { CardFavoriteIcon } from "../shared/Card/CardFavoriteIcon";
 import { useNavigation } from "@react-navigation/native";
 import { SharedElement } from "react-navigation-shared-element";
 

@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Card } from "../shared/Card/Card";
-import { CardContent } from "../shared/Card/CardContent";
-import { CardMedia } from "../shared/Card/CardMedia";
-import { Carousel } from "../shared/Carousel";
-import { sizes, colors, spacing } from "../../constants/theme";
-import { Icon } from "../shared/Icon";
-import { Rating } from "./../shared/Rating/Rating";
-import { CardFavoriteIcon } from "../shared/Card/CardFavoriteIcon";
+import { Card } from "../../shared/Card/Card";
+import { CardContent } from "../../shared/Card/CardContent";
+import { CardMedia } from "../../shared/Card/CardMedia";
+import { Carousel } from "../../shared/Carousel";
+import { sizes, colors, spacing } from "../../../constants/theme";
+import { Icon } from "../../shared/Icon";
+import { Rating } from "../../shared/Rating/Rating";
+import { CardFavoriteIcon } from "../../shared/Card/CardFavoriteIcon";
 
 const CARD_HEIGHT = 200;
 
@@ -19,7 +19,7 @@ export const HotelsCarousel = ({ hotels }) => {
         return (
           <Card style={[styles.card, style]}>
             <CardFavoriteIcon active={false} onPress={() => {}} />
-            <CardMedia source={item.image} />
+            <CardMedia source={item.image} borderBottomRadius />
             <CardContent style={styles.content}>
               <View style={styles.titleBox}>
                 <Text style={styles.title}>{item.title}</Text>
@@ -45,6 +45,7 @@ export const HotelsCarousel = ({ hotels }) => {
     />
   );
 };
+
 const styles = StyleSheet.create({
   card: {
     height: CARD_HEIGHT,
