@@ -7,18 +7,21 @@ export const FavoriteButton = ({ active, style, onPress }) => {
   return (
     <TouchableOpacity style={style} onPress={onPress}>
       <View
-      style={[
-        {
-          backgroundColor: colors.white,
-          padding: 4,
-          borderRadius: sizes.radius,
-        },
-        shadow.light,
-      ]}
-    >
-      <Icon icon={active ? 'FavoriteFilled':"Favorite"} size={25} />
-    </View>
+        style={[
+          {
+            backgroundColor: colors.white,
+            padding: 4,
+            borderRadius: sizes.radius,
+          },
+          shadow.light,
+        ]}
+      >
+        <Icon
+          icon={active ? "FavoriteFilled" : "Favorite"}
+          size={25}
+          color={active ? "red" : "white"}
+        />
+      </View>
     </TouchableOpacity>
   );
 };
-

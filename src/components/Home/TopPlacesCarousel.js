@@ -24,7 +24,7 @@ export const TopPlacesCarousel = ({ list }) => {
               navigation.navigate("TripDetails", { trip: item });
             }}
           >
-            <CardFavoriteIcon active={false} onPress={() => {}} />
+            <CardFavoriteIcon active={true} onPress={() => {}} />
             <SharedElement
               id={`trip.${item.id}.image`}
               style={StyleSheet.absoluteFillObject}

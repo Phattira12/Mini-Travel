@@ -3,9 +3,12 @@ import { StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { colors, shadow, sizes, spacing } from "../../constants/theme";
 import { Icon } from "../shared/Icon";
+import { SearchCard } from "./SearchCard";
+// import { SEARCH_ALL } from "../../data";
 
 export const SearchInput = () => {
-  const [search, setSearch] = useState("");
+  const [input, setInput] = useState("");
+
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
@@ -15,13 +18,14 @@ export const SearchInput = () => {
         <TextInput
           style={styles.field}
           placeholder="Search"
-          value={search}
-          onChangeText={setSearch}
+          value={input}
+          onChangeText={(newText) => setInput(newText)}
         />
         <View style={styles.filter}>
           <Icon icon="Filter" onPress={() => {}} />
         </View>
       </View>
+      {/* <SearchCard data={SEARCH_ALL} input={input} setInput={setInput} /> */}
     </View>
   );
 };
