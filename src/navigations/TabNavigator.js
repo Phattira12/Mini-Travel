@@ -6,6 +6,7 @@ import { colors, sizes } from "../constants/theme";
 import { HomeNavigator } from "./HomeNavigator";
 import { SearchNavigator } from "./SearchNavigator";
 import { FavoriteNavigator } from "./FavoriteNavigator";
+import { ProfileNavigator } from "./ProfileNavigator";
 
 const tabs = [
   {
@@ -19,6 +20,10 @@ const tabs = [
   {
     name: "Favorite",
     screen: FavoriteNavigator,
+  },
+  {
+    name: "User",
+    screen: ProfileNavigator,
   },
 ];
 
@@ -77,7 +82,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: 10,
     height: 2,
-    left: sizes.width / 3 / 2 - 5,
+    left: sizes.width / 3 / 2 -20,
     bottom: 10,
     backgroundColor: colors.primary,
     zIndex: 100,

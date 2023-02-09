@@ -12,6 +12,7 @@ export const TripDetailsCarousel = ({ slides, id }) => {
       <Animated.FlatList
         data={slides}
         horizontal
+        showsHorizontalScrollIndicator={false}
         pagingEnabled
         bounces={false}
         onScroll={Animated.event(

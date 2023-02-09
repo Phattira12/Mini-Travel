@@ -8,12 +8,12 @@ export const FavoriteNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="FavoriteScreen"
+        name="Favorites"
         component={FavoriteScreen}
         options={{
           headerShown: false,
           useNativeDriver: true,
-          gestureEnabled:false,
+          gestureEnabled:true,
         }}
       />
     </Stack.Navigator>

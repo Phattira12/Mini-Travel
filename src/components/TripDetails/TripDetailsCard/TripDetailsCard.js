@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
 import { colors, sizes, spacing } from "../../../constants/theme";
 import * as Animatable from "react-native-animatable";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";

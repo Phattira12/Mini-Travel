@@ -10,6 +10,7 @@ export const colors = {
   white: "#ffffff",
   black: "#000000",
   lightcyan: "#fceefd",
+  crimson: "#dc143c",
 };
 
 export const shadow = {
